@@ -25,12 +25,12 @@ def animal_sound(animals: list):
 animal_sound(animals)
 
 """
-The function AnimalSound does not conform to the open-closed principle because it cannot be closed against new kinds of animals.
-If we add a new animal, Snake, We have to modify the AnimalSound function.
-You see, for every new animal, a new logic is added to the AnimalSound function. 
+The function animal_sound does not conform to the open-closed principle because it cannot be closed against new kinds of animals.
+If we add a new animal, Snake, We have to modify the animal_sound function.
+You see, for every new animal, a new logic is added to the animal_sound function. 
 This is quite a simple example. When your application grows and becomes complex, 
 you will see that the if statement would be repeated over and over again 
-in the AnimalSound function each time a new animal is added, all over the application.
+in the animal_sound function each time a new animal is added, all over the application.
 """
 
 animals = [
@@ -52,7 +52,7 @@ animal_sound(animals)
 
 
 """
-How do we make it (the AnimalSound) conform to OCP?
+How do we make it (the animal_sound) conform to OCP?
 """
 
 class Animal:
@@ -88,13 +88,15 @@ def animal_sound(animals: list):
 animal_sound(animals)
 
 """
-Animal now has a virtual method makeSound. We have each animal extend the Animal class and implement the virtual makeSound method.
+Animal now has a virtual method make_sound. We have each animal extend the Animal class and implement the virtual make_sound method.
 
-Every animal adds its own implementation on how it makes a sound in the makeSound. The AnimalSound iterates through the array of animal and just calls its makeSound method.
+Every animal adds its own implementation on how it makes a sound in the make_sound. 
+The animal_sound iterates through the array of animal and just calls its make_sound method.
 
-Now, if we add a new animal, AnimalSound doesn’t need to change. All we need to do is add the new animal to the animal array.
+Now, if we add a new animal, animal_sound doesn’t need to change. 
+All we need to do is add the new animal to the animal array.
 
-AnimalSound now conforms to the OCP principle.
+animal_sound now conforms to the OCP principle.
 """
 
 """

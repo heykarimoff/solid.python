@@ -58,7 +58,7 @@ without bothering to know the type of network connection.
 We can now re-implement our XMLHttpService class to implement the Connection interface:
 """
 
-class XMLHttpService(Connection)
+class XMLHttpService(Connection):
     xhr = XMLHttpRequest()
 
     def request(self, url: str, options:dict):
@@ -68,12 +68,11 @@ class XMLHttpService(Connection)
 """
 We can create many Http Connection types and pass it to our Http class without any fuss about errors.
 """
-class NodeHttpService(Connection)
-
+class NodeHttpService(Connection):
     def request(self, url: str, options:dict):
         pass
 
-class MockHttpService(Connection)
+class MockHttpService(Connection):
     def request(self, url: str, options:dict):
         pass
 

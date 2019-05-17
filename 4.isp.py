@@ -19,7 +19,7 @@ class IShape:
 
 """
 This interface draws squares, circles, rectangles. class Circle, Square or Rectangle implementing the IShape 
-interface must define the methods drawCircle(), drawSquare(),drawRectangle().
+interface must define the methods draw_square(), draw_rectangle(), draw_circle().
 """
 
 class Circle(IShape):
@@ -53,10 +53,10 @@ class Rectangle(IShape):
         pass
 
 """
-It’s quite funny looking at the code above. class Rectangle implements methods (drawCircle and drawSquare) it has no use of, 
-likewise Square implementing drawCircle, and drawRectangle, and class Circle (drawSquare, drawSquare).
+It’s quite funny looking at the code above. class Rectangle implements methods (draw_circle and draw_square) it has no use of, 
+likewise Square implementing draw_circle, and draw_rectangle, and class Circle (draw_square, draw_rectangle).
 
-If we add another method to the IShape interface, like drawTriangle(),
+If we add another method to the IShape interface, like draw_triangle(),
 """
 
 class IShape:

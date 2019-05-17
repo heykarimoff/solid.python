@@ -23,7 +23,7 @@ The Animal class violates the SRP.
 How does it violate SRP?
 
 SRP states that classes should have one responsibility, here, we can draw out two responsibilities: animal database management and animal properties management. 
-The constructor and getAnimalName manage the Animal properties while the saveAnimal manages the Animal storage on a database.
+The constructor and get_name manage the Animal properties while the save manages the Animal storage on a database.
 
 How will this design cause issues in the future?
 

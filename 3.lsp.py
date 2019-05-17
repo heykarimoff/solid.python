@@ -25,7 +25,7 @@ If the super-class (Animal) has a method that accepts a super-class type (Animal
 Its sub-class(Pigeon) should accept as argument a super-class type (Animal type) or sub-class type(Pigeon type).
 If the super-class returns a super-class type (Animal). 
 Its sub-class should return a super-class type (Animal type) or sub-class type(Pigeon).
-Now, we can re-implement AnimalLegCount function:
+Now, we can re-implement animal_leg_count function:
 """
 
 def animal_leg_count(animals: list):
@@ -35,11 +35,11 @@ def animal_leg_count(animals: list):
 animal_leg_count(animals)
 
 """
-The AnimalLegCount function cares less the type of Animal passed, it just calls the LegCount method. 
+The animal_leg_count function cares less the type of Animal passed, it just calls the leg_count method. 
 All it knows is that the parameter must be of an Animal type, either the Animal class or its sub-class.
 
-The Animal class now have to implement/define a LegCount method.
-And its sub-classes have to implement the LegCount method:
+The Animal class now have to implement/define a leg_count method.
+And its sub-classes have to implement the leg_count method:
 """
 
 class Animal:
@@ -53,8 +53,8 @@ class Lion(Animal):
 
 
 """
-When it’s passed to the AnimalLegCount function, it returns the number of legs a lion has.
+When it’s passed to the animal_leg_count function, it returns the number of legs a lion has.
 
-You see, the AnimalLegCount doesn’t need to know the type of Animal to return its leg count, 
-it just calls the LegCount method of the Animal type because by contract a sub-class of Animal class must implement the LegCount function.
+You see, the animal_leg_count doesn’t need to know the type of Animal to return its leg count, 
+it just calls the leg_count method of the Animal type because by contract a sub-class of Animal class must implement the leg_count function.
 """
