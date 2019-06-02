@@ -27,7 +27,7 @@ Here, Http is the high-level component whereas HttpService is the low-level comp
 This design violates DIP A: High-level modules should not depend on low-level level modules. It should depend upon its abstraction.
 
 Ths Http class is forced to depend upon the XMLHttpService class. 
-If we were to change to change the Http connection service, maybe we want to connect to the internet through cURL or even Mock the http service. 
+If we were to change the Http connection service, maybe we want to connect to the internet through cURL or even Mock the http service. 
 We will painstakingly have to move through all the instances of Http to edit the code and this violates the OCP principle.
 
 The Http class should care less the type of Http service you are using. We make a Connection interface:
