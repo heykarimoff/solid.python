@@ -43,7 +43,7 @@ class Animal:
 
 
 class AnimalDB:
-    def get_animal(self) -> Animal:
+    def get_animal(self, id) -> Animal:
         pass
 
     def save(self, animal: Animal):
@@ -53,4 +53,29 @@ class AnimalDB:
 When designing our classes, we should aim to put related features together, 
 so whenever they tend to change they change for the same reason. 
 And we should try to separate features if they will change for different reasons. - Steve Fenton
+"""
+
+"""
+The downside of this solution is that the clients of the this code have to deal with two classes.
+A common solution to this dilemma is to apply the Facade pattern.
+Animal class will be the Facade for animal database management and animal properties management.
+"""
+
+class Animal:
+    def __init__(self, name: str):
+        self.name = name
+        self.db = AnimalDB()
+
+    def get_name(self):
+        return self.name
+
+    def get(self, id):
+        return self.db.get_animal(id)
+    
+    def save(self):
+        self.db.save(animal=self)
+
+
+"""
+The most important methods are kept in the Animal class and used as Facade for the lesser functions.
 """
