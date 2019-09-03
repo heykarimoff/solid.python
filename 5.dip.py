@@ -26,7 +26,7 @@ class Http:
         self.xml_http_service.request(url, 'POST')
 
 """
-Here, Http is the high-level component whereas HttpService is the low-level
+Here, Http is the high-level component whereas XMLHttpService is the low-level
 component.  This design violates DIP A: High-level modules should not depend on
 low-level level modules. It should depend upon its abstraction.
 
